@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+        label {
+            margin-bottom: 0.5rem;
+        }
+        input[type="text"] {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 0.5rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Scraper</h1>
+    <form method="post" action="/scrape">
+        <label for="url">Enter URL to scrape:</label>
+        <input type="text" id="url" name="url" placeholder="https://example.com" required>
+        <button type="submit">Scrape</button>
+    </form>
+    <div class="message">
+        {% if message %}
+            {{ message }}
+        {% endif %}
+    </div>
+    <hr>
+    <h2>Render Template</h2>
+    <form method="get" action="/render">
+        <label for="template_id">Enter Template ID:</label>
+        <input type="text" id=placeholder.value name="template_id" placeholder="Enter Template ID" required>
+        <button type="submit">Render</button>
+    </form>
+</body>
+</html>
